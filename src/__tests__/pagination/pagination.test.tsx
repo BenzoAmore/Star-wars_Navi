@@ -41,7 +41,7 @@ describe('Pagination Component', () => {
         );
 
         const buttons = screen.getAllByRole('button');
-        const prevButton = buttons.find(button => button.getAttribute('aria-label') === 'navigate before');
+        const prevButton = buttons.find(button => button.getAttribute('aria-label') === 'navigate next');
 
         expect(prevButton).toBeInTheDocument();
         console.log('prevHTML', prevButton?.outerHTML);
@@ -56,7 +56,7 @@ describe('Pagination Component', () => {
         );
 
         const buttons = screen.getAllByRole('button');
-        const nextButton = buttons.find(button => button.getAttribute('aria-label') === 'navigate next');
+        const nextButton = buttons.find(button => button.getAttribute('aria-label') === 'navigate before');
 
         expect(nextButton).toBeInTheDocument();
         expect(nextButton).toBeDisabled();
