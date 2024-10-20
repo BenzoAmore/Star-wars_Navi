@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
@@ -10,8 +10,8 @@ export default defineConfig({
     },
   },
   test: {
-    globals: true, // Включите глобальные функции для тестирования
-    environment: 'jsdom', // Или 'node' в зависимости от ваших тестов
+    globals: true, 
+    environment: 'jsdom', 
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
