@@ -1,8 +1,9 @@
+import { API_URL } from '@/constans';
 import { IFilmDTO, IHero, IHeroesDTO, IStarshipDTO } from '@/types';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://sw-api.starnavi.io/',
+  baseURL: API_URL,
 });
 
 export async function getHeroes(page: number = 1): Promise<IHeroesDTO> {

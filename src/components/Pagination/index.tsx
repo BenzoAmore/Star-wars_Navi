@@ -2,6 +2,7 @@ import { FC, useMemo } from 'react';
 import { Box, Button, IconButton } from '@mui/material';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { HEROES_PER_PAGE } from '@/constans';
 
 
 interface OneButtonPros {
@@ -49,7 +50,7 @@ interface PaginationData {
 const Pagination: FC<PaginationData> = ({ dataCount, setPage, currentPage }) => {
     const navigate = useNavigate();
     
-    const countPages = useMemo(() => Math.ceil(dataCount / 10), [dataCount]);
+    const countPages = useMemo(() => Math.ceil(dataCount / HEROES_PER_PAGE), [dataCount]);
     const pages = useMemo(() => Array.from({ length: countPages }, (_, index) => index + 1), [countPages]);
 
     const handlePageChange = (newPage: number): void => {
